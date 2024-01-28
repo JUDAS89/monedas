@@ -45,10 +45,8 @@ async function convertirMoneda(){
         return
     } else {
         const cambio=Number((valorPesos/valorMoneda).toFixed(1))
-    resultado.innerHTML=cambio
+        resultado.innerHTML=cambio
     }
-
-
 }
 
 //grafica
