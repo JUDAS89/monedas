@@ -38,13 +38,17 @@ async function convertirMoneda(){
     }
             
     const valorPesos=Number(pesos.value)        
-    if (valorPesos<=0) {
-        window.alert("El monto ingresado debe ser positivo(+) y mayor a 0")
+
+    if (valorPesos<=0 || isNaN(valorPesos)) {
+        window.alert("El valor ingresado debe ser un numero positivo(+) y mayor a 0")
+        pesos.value=""
         return
-    } 
-        
-    const cambio=(valorPesos/valorMoneda).toFixed(1)
+    } else {
+        const cambio=Number((valorPesos/valorMoneda).toFixed(1))
     resultado.innerHTML=cambio
+    }
+
+
 }
 
 //grafica
